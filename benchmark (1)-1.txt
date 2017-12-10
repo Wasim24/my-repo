@@ -1,0 +1,14 @@
+
+hadoop jar $HADOOP_PREFIX/hadoop-*examples*.jar pi 5 1000
+
+hadoop jar $HADOOP_PREFIX/hadoop-*examples*.jar teragen 524288 input                     
+
+hadoop jar $HADOOP_PREFIX/hadoop-*examples*.jar terasort input output                
+
+hadoop jar $HADOOP_PREFIX/hadoop-*test*.jar TestDFSIO -write -nrFiles 5 -fileSize 100          
+
+hadoop jar $HADOOP_PREFIX/hadoop-*test*.jar TestDFSIO -read -nrFiles 5 -fileSize 100
+
+hadoop jar $HADOOP_PREFIX/hadoop-*test*.jar TestDFSIO -clean
+
+hadoop jar $HADOOP_PREFIX/hadoop-*examples*.jar wordcount input output 
